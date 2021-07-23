@@ -7,5 +7,7 @@ MongoDB:
 ----------------------------------
 React:
 ----------------------------------
-React-Bootstrap:
+React-Bootstrap: https://react-bootstrap.github.io/getting-started/introduction
+
+Used to create UI components. 
 ----------------------------------
