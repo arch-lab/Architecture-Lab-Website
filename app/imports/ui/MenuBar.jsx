@@ -1,31 +1,26 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const MenuBar = () => {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="light" variant="light">
           <Navbar.Brand as={Link} to="/">
             <img
               alt=""
-              src="https://react-bootstrap.github.io/logo.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
+              src="/images/logo@2x.png"
+              height="45"
             />{' '}
-          React Bootstrap
           </Navbar.Brand>
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/NotHome">Not Home</Nav.Link>
+          <Nav className="ms-auto">
+            <Nav.Link as={ Link } to="/">Home</Nav.Link>
+            <Nav.Link as={ Link } to="/EquipmentRental">Equipment Rental</Nav.Link>
+            <Nav.Link as={ Link } to="/ClassroomReservation">Classroom Reservation</Nav.Link>
+            <Nav.Link as={ Link } to="/SoftwareRequestForms">Software Request Forms</Nav.Link>
+          </Nav>
       </Navbar>
     </div>
   );
