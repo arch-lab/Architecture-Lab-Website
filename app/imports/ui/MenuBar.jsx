@@ -11,7 +11,7 @@ export const MenuBar = () => {
           <Navbar.Brand as={Link} to="/">
             <img
               alt=""
-              src="/images/logo@2x.png"
+              src="/images/soa-logo.png"
               height="45"
             />{' '}
           </Navbar.Brand>
