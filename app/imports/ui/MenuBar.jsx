@@ -15,7 +15,7 @@ export const MenuBar = () => {
               height="45"
             />{' '}
           </Navbar.Brand>
-          <Nav className="ms-auto">
+          <Nav>
             <Nav.Link as={ Link } to="/">Home</Nav.Link>
             <Nav.Link as={ Link } to="/EquipmentRental">Equipment Rental</Nav.Link>
             <Nav.Link as={ Link } to="/ClassroomReservation">Classroom Reservation</Nav.Link>
