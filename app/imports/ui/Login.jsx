@@ -15,7 +15,7 @@ export const Login = () => {
 /*A function to handle sucessful login*/
   const onSuccess = (res) => {
     var profile = res.getBasicProfile();
-    var id_token = googleUser.getAuthResponse().id_token;
+    var id_token = res.getAuthResponse().id_token;
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
