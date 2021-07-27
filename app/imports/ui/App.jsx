@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { MenuBar } from './MenuBar.jsx';
+import MenuBar from './MenuBar.jsx';
 import { Home } from './Home.jsx';
 import { EquipmentRental } from './EquipmentRental.jsx';
 import { ClassroomReservation } from './ClassroomReservation.jsx';
