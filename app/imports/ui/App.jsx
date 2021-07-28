@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import MenuBar from './MenuBar.jsx';
-import { Home } from './Home.jsx';
-import { EquipmentRental } from './EquipmentRental.jsx';
-import { ClassroomReservation } from './ClassroomReservation.jsx';
-import { SoftwareRequestForms } from './SoftwareRequestForms.jsx';
-import { Footer } from './Footer.jsx';
+import NavBar from './components/NavBar.jsx';
+import { Home } from './pages/Home.jsx';
+import { EquipmentRental } from './pages/EquipmentRental.jsx';
+import { ClassroomReservation } from './pages/ClassroomReservation.jsx';
+import { SoftwareRequestForms } from './pages/SoftwareRequestForms.jsx';
+import { Footer } from './components/Footer.jsx';
 
 export const App = () => (
   <div>
     <Router>
-      <MenuBar/>
+      <NavBar/>
       <Route exact path="/">
         <Home/>
       </Route>

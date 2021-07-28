@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
-import { Login } from './Login.jsx'
+import { LoginButton } from './LoginButton.jsx'
 
-class MenuBar extends React.Component {
+class NavBar extends React.Component {
   constructor(props){
     super(props);
   }
@@ -27,7 +27,7 @@ class MenuBar extends React.Component {
               <Nav.Link as={ Link } to="/SoftwareRequestForms">Software Request Forms</Nav.Link>
             </Nav>
             <Navbar.Collapse className="justify-content-end">
-              <Login/>
+              <LoginButton/>
             </Navbar.Collapse>
         </Navbar>
       </div>
@@ -35,4 +35,4 @@ class MenuBar extends React.Component {
   }
 }
 
-export default MenuBar;
+export default NavBar;
