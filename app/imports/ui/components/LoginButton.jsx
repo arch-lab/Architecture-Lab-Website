@@ -1,18 +1,18 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 
 export const LoginButton = () => {
 
   function handleClick() {
     Meteor.loginWithGoogle({
-      requestPermissions: ['email']
+      requestPermissions: ['profile']
     }, (err) => {
       if (err) {
-    console.log(err);
-    } else {
-    console.log(Meteor.user());
-    }
-});
+        console.log(err);
+      } else {
+        console.log(Meteor.user());
+      }
+    });
   };
 
   return (

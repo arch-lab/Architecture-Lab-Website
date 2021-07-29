@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
-import { LoginButton } from './LoginButton.jsx'
+import { LoginManager } from './LoginManager.jsx'
 
 export const NavBar = () => {
 
@@ -23,7 +23,7 @@ export const NavBar = () => {
           <Nav.Link as={ Link } to="/SoftwareRequestForms">Software Request Forms</Nav.Link>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
-          <LoginButton/>
+          <LoginManager/>
         </Navbar.Collapse>
       </Navbar>
     </div>
