@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-export const LoginButton = () => {
+function LoginButton({handleLogin}) {
 
   function handleClick() {
     Meteor.loginWithGoogle({
@@ -10,7 +10,8 @@ export const LoginButton = () => {
       if (err) {
         console.log(err);
       } else {
-        console.log(Meteor.user());
+        handleLogin();
+        console.log('Sucessfully signed in');
       }
     });
   };
@@ -25,4 +26,4 @@ export const LoginButton = () => {
       </Button>
     </div>
   );
-};
+} export default LoginButton;

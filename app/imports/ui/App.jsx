@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { NavBar } from './components/NavBar.jsx';
+import NavBar from './components/NavBar.jsx';
 import { Home } from './pages/Home.jsx';
 import { EquipmentRental } from './pages/EquipmentRental.jsx';
 import { ClassroomReservation } from './pages/ClassroomReservation.jsx';
