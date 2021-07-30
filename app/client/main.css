@@ -3,17 +3,22 @@ body {
   font-family: sans-serif;
 }
 
+.navbar {
+  padding: .5rem;
+}
+
 #googleBtn {
-  margin: 5px;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-#googleBtnImg {
   height: 40px;
+  width:  166.5px;
+  background-image: url('/images/btn_google_signin_dark_normal_web@2x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#googleBtnImg:hover {
-  opacity: 0.5;
+#googleBtn:hover {
+  height: 40px;
+  width:  166.5px;
+  background-image: url('/images/btn_google_signin_dark_pressed_web@2x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }

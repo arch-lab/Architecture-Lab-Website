@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTracker } from 'meteor/react-meteor-data';
 import LoginButton from './LoginButton.jsx';
 import { MiniProfile } from './MiniProfile.jsx';
 import Logout from './Logout.jsx';
@@ -24,7 +25,7 @@ class LoginControl extends React.Component {
 
   render(){
     const isLoggedIn = this.state.isLoggedIn;
-    if (isLoggedIn) {
+    if (Meteor.user()) {
       return (
         <Logout handleLogout={this.handleLogout}/>
       );

@@ -1,14 +1,13 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-function Logout({handleLogout}) {
+function Logout() {
 
   function handleClick() {
     Meteor.logout((err) => {
       if (err) {
         console.log(err);
       } else {
-        handleLogout();
         console.log('Sucessfully signed out');
       }
     });

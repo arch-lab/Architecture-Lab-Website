@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
 import LoginControl from './LoginControl.jsx';
+import LoginControlTest from './LoginControlTest.jsx';
 
 function NavBar(props) {
 
@@ -23,7 +24,7 @@ function NavBar(props) {
             <Nav.Link as={ Link } to="/SoftwareRequestForms">Software Request Forms</Nav.Link>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
-            <LoginControl/>
+            <LoginControlTest/>
           </Navbar.Collapse>
         </Navbar>
       </div>
