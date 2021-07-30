@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
-import LoginControl from './LoginControl.jsx'
+import LoginControl from './LoginControl.jsx';
 
 function NavBar(props) {
 

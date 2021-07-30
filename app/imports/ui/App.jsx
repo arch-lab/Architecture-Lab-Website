@@ -1,29 +1,30 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, {render} from 'react';
 import NavBar from './components/NavBar.jsx';
-import { Home } from './pages/Home.jsx';
-import { EquipmentRental } from './pages/EquipmentRental.jsx';
-import { ClassroomReservation } from './pages/ClassroomReservation.jsx';
-import { SoftwareRequestForms } from './pages/SoftwareRequestForms.jsx';
+import Routes from '../startup/client/routes.jsx';
 import { Footer } from './components/Footer.jsx';
 
-export const App = () => (
-  <div>
-      <NavBar/>
-      <Switch>
-        <Route path="/EquipmentRental">
-          <EquipmentRental/>
-        </Route>
-        <Route path="/ClassroomReservation">
-          <ClassroomReservation/>
-        </Route>
-        <Route path="/SoftwareRequestForms">
-          <SoftwareRequestForms/>
-        </Route>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-      </Switch>
-      <Footer/>
-  </div>
-);
+class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = { isAuthenticated: false };
+  }
+
+  login = () => {
+    this.setState({ isAuthenticated: true });
+  }
+
+  logout = () => {
+    this.setState({ isAuthenticated: false });
+  }
+
+  render(){
+    return(
+      <div>
+          <NavBar/>
+          <Routes/>
+          <Footer/>
+      </div>
+    );
+  }
+} export default App;

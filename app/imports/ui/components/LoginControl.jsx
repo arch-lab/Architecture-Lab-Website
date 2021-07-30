@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import LoginButton from './LoginButton.jsx'
-import { MiniProfile } from './MiniProfile.jsx'
-import { Logout } from './Logout.jsx'
+import LoginButton from './LoginButton.jsx';
+import { MiniProfile } from './MiniProfile.jsx';
+import Logout from './Logout.jsx';
 
-function LoginControl() {
+class LoginControl extends React.Component {
 
-  const [isLoggedIn, setisLoggedIn] = useState(false);
-  let button;
-
-  console.log({isLoggedIn});
-
-  function handleLogin() {
-    setisLoggedIn({isLoggedIn: true});
-    console.log({isLoggedIn});
+  constructor(props){
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.state = {isLoggedIn: false};
   }
 
-  function handleLogout() {
-    setisLoggedIn({isLoggedIn: false});
-    console.log({isLoggedIn});
+  handleLogin = () => {
+    this.setState({isLoggedIn: true});
+    console.log(this.state.isLoggedIn);
   }
 
-  if (isLoggedIn) {
-    return (
-      <Logout handleLogout={handleLogout}/>
-    );
+  handleLogout = () => {
+    this.setState({isLoggedIn: false});
+    console.log(this.state.isLoggedIn);
+  }
 
-  } else {
-    return(
-      <LoginButton handleLogin={handleLogin}/>
-    );
+  render(){
+    const isLoggedIn = this.state.isLoggedIn;
+    if (isLoggedIn) {
+      return (
+        <Logout handleLogout={this.handleLogout}/>
+      );
+
+    } else {
+      return(
+        <LoginButton handleLogin={this.handleLogin}/>
+      );
+    }
   }
 } export default LoginControl;

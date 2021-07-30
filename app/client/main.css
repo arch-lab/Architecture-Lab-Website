@@ -3,17 +3,6 @@ body {
   font-family: sans-serif;
 }
 
-#googleButton {
-  font-family: 'Roboto', sans-serif;
-  padding-top: 2px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 2px;
-}
-
-#googleLogo {
-  height: 30px;
-  padding: 2px;
-  margin-right: 10px;
-  background-color: 'white';
+#googleBtn {
+  
 }

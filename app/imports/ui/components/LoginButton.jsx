@@ -18,12 +18,9 @@ function LoginButton({handleLogin}) {
 
   return (
     <div>
-      <Button variant='primary' id='googleButton' onClick={handleClick}>
-        <img
-          id='googleLogo'
-          src='https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png'
-        />Sign-In
-      </Button>
+      <button id='googleBtn' onClick={handleClick}>
+        <img src='/images/btn_google_signin_dark_normal_web@2x.png'/>
+      </button>
     </div>
   );
 } export default LoginButton;
