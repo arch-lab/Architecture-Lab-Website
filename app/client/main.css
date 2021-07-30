@@ -4,5 +4,16 @@ body {
 }
 
 #googleBtn {
-  
+  margin: 5px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+#googleBtnImg {
+  height: 40px;
+}
+
+#googleBtnImg:hover {
+  opacity: 0.5;
 }

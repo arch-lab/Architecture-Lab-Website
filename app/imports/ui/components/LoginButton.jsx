@@ -19,7 +19,7 @@ function LoginButton({handleLogin}) {
   return (
     <div>
       <button id='googleBtn' onClick={handleClick}>
-        <img src='/images/btn_google_signin_dark_normal_web@2x.png'/>
+        <img id='googleBtnImg' src='/images/btn_google_signin_dark_normal_web@2x.png'/>
       </button>
     </div>
   );
