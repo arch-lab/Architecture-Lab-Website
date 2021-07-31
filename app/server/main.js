@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/db/links';
+import { Roles } from 'meteor/alanning:roles';
 import ServiceConfiguration from '/server/service-configuration.js'
 
 function insertLink({ title, url }) {
@@ -8,6 +9,10 @@ function insertLink({ title, url }) {
 
 Meteor.startup(() => {
   // If the Links collection is empty, add some data.
+
+  Roles.createRole('admin', {unlessExists: true});
+  Roles.addUsersToRoles(Meteor.settings.roles.defaultAdmin, 'admin', Roles.GLOBAL_GROUP);
+
   if (LinksCollection.find().count() === 0) {
     insertLink({
       title: 'Do the Tutorial',
