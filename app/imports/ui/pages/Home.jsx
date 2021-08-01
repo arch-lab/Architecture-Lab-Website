@@ -7,6 +7,8 @@ function Home() {
 
   const user = useTracker(() => Meteor.user());
 
+
+
   function handleClick() {
     console.log(Meteor.userId());
     console.log(Meteor.user());

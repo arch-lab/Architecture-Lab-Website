@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/db/links';
 import { Roles } from 'meteor/alanning:roles';
 import ServiceConfiguration from '/server/service-configuration.js'
+import '/imports/api/userMethods.jsx';
+import '/server/userPublication.jsx';
 
 function insertLink({ title, url }) {
   LinksCollection.insert({title, url, createdAt: new Date()});
