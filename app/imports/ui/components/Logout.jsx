@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import Button from '@material-ui/core/Button';
 
 function Logout() {
 
@@ -15,7 +15,7 @@ function Logout() {
 
   return(
     <div>
-      <Button variant='primary' onClick={handleClick}>Logout</Button>
+      <Button variant='contained' onClick={handleClick}>Logout</Button>
     </div>
   );
 } export default Logout;

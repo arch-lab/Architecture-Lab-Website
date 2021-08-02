@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { useTracker } from 'meteor/react-meteor-data';
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import Button from '@material-ui/core/Button';
 
 function Home() {
 
@@ -24,16 +24,16 @@ function Home() {
     return (
       <div>
         <h1>Welcome {user.services.google.given_name} {user.services.google.family_name}</h1>
-        <Button variant='primary' onClick={handleClick}>Meteor.user()</Button>
-        <Button variant='primary' onClick={handleRoleClick}>Roles.userIsInRole()</Button>
+        <Button variant='contained' onClick={handleClick}>Meteor.user()</Button>
+        <Button variant='contained' onClick={handleRoleClick}>Roles.userIsInRole()</Button>
       </div>
     );
   } else {
     return(
       <div>
         <h1>Welcome, please sign in.</h1>
-        <Button variant='primary' onClick={handleClick}>Meteor.user()</Button>
-        <Button variant='primary' onClick={handleRoleClick}>Roles.userIsInRole()</Button>
+        <Button variant='contained' onClick={handleClick}>Meteor.user()</Button>
+        <Button variant='contained' onClick={handleRoleClick}>Roles.userIsInRole()</Button>
       </div>
     );
   }

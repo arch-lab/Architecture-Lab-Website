@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
-import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
 
   function AdminLink(){
@@ -10,7 +9,7 @@ import { Link } from "react-router-dom";
     if(Roles.userIsInRole(user, ['admin'])){
       return(
         <>
-          <Nav.Link as={ Link } to="/admin">Admin</Nav.Link>
+          <Link as={ Link } to="/admin">Admin</Link>
         </>
       );
     } else {
