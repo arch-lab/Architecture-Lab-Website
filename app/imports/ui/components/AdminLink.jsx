@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
   function AdminLink(){
 
-    const user = useTracker(() => Meteor.user());
+    const user = useTracker(() => Meteor.user(), []);
 
     if(Roles.userIsInRole(user, ['admin'])){
       return(

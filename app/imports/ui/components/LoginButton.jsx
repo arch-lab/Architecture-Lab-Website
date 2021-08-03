@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 function LoginButton() {
 
@@ -15,6 +16,15 @@ function LoginButton() {
   };
 
   return (
-    <div id='googleBtn' onClick={handleClick}/>
+    <div id='navItem'>
+    <Button
+      variant='contained'
+      id='googleBtn'
+      onClick={handleClick}
+    >
+      <img id='btnImg' src='/images/g-logo.png'/>
+      Sign in with Google
+    </Button>
+    </div>
   );
 } export default LoginButton;
