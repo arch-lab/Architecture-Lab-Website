@@ -2,33 +2,3 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
-
-#btnImg {
-  max-height: 30px;
-  padding-right: 6px;
-}
-
-#navLogo {
-  max-height: 40px;
-  background-color: white;
-}
-
-#navLogo:hover {
-  background-color: #d5d5d5;
-}
-
-#googleBtn {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 8px;
-  padding-right: 12px;
-  background-color: white;
-  font-weight: 600;
-}
-
-.MuiGrid-root.MuiGrid-item {
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-  padding-right: 24px;
-}

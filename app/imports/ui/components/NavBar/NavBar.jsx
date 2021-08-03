@@ -5,29 +5,29 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Link, RouterLink } from "react-router-dom";
-import LoginControl from './LoginControl.jsx';
-import AdminLink from './AdminLink.jsx';
+import LoginControl from '../LoginControl/LoginControl.jsx';
+import AdminLink from '../AdminLink/AdminLink.jsx';
+import styles from './NavBar.css';
 
 function NavBar(props) {
 
-  const [currentTab, setTab] = React.useState(0);
+  const [currentTab, setTab] = React.useState(window.location.pathname);
+
   const handleChange = (event, newTab) => {
     setTab(newTab);
-    console.log(currentTab);
   };
 
     return (
-      <div>
-        <AppBar position='static'>
-          <Grid container>
+        <AppBar position='static' color="default">
+          <Grid container id='navBar'>
 
-            <Grid item>
+            <Grid item id='navItem'>
               <Link to='/' onClick={null}>
                 <img id='navLogo' src='/images/soa-logo.png'/>
               </Link>
             </Grid>
 
-            <Grid item style={{flexGrow: 1}}>
+            <Grid item id='navLinks'>
               <Toolbar>
                 <Tabs
                 indicatorColor='primary'
@@ -37,21 +37,25 @@ function NavBar(props) {
                     label='Home'
                     component={Link}
                     to='/'
+                    value='/'
                   />
                   <Tab
                     label='equipment-rental'
                     component={Link}
                     to='/equipment-rental'
+                    value='/equipment-rental'
                   />
                   <Tab
                     label='classroom-reservation'
                     component={Link}
                     to='/classroom-reservation'
+                    value='/classroom-reservation'
                   />
                   <Tab
                     label='software-request-forms'
                     component={Link}
                     to='/software-request-forms'
+                    value='/software-request-forms'
                   />
                   <AdminLink/>
                 </Tabs>
@@ -64,7 +68,6 @@ function NavBar(props) {
 
           </Grid>
         </AppBar>
-      </div>
     );
 
 } export default NavBar;

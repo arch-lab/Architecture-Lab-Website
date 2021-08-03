@@ -1,0 +1,22 @@
+#navBar {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+#navLogo {
+  max-height: 55px;
+  padding: 5px;
+}
+
+#navLogo:hover {
+  background-color: #d5d5d5;
+}
+
+#navItem {
+  display: flex;
+  align-items: center;
+}
+
+#navLinks {
+  flex-grow: 1;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import Home from '../../ui/pages/Home.jsx';
 import { EquipmentRental } from '../../ui/pages/EquipmentRental.jsx';
 import { ClassroomReservation } from '../../ui/pages/ClassroomReservation.jsx';

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
-import LoginButton from './LoginButton.jsx';
-import { MiniProfile } from './MiniProfile.jsx';
-import Logout from './Logout.jsx';
+import LoginButton from '../LoginButton/LoginButton.jsx';
+import { MiniProfile } from '../MiniProfile.jsx';
+import Logout from '../Logout.jsx';
 
 function LoginControl(props) {
 

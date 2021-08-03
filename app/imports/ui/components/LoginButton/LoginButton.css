@@ -1,0 +1,17 @@
+#btnImg {
+  max-height: 25px;
+  padding-right: 5px;
+}
+
+#googleBtn {
+  padding-top: 6px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: white;
+  font-weight: bold;
+}
+
+#googleBtn:hover {
+  background-color: #d5d5d5
+}
