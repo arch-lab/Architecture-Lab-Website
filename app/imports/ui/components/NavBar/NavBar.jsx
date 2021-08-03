@@ -14,7 +14,12 @@ function NavBar(props) {
   const [currentTab, setTab] = React.useState(window.location.pathname);
 
   const handleChange = (event, newTab) => {
-    setTab(newTab);
+    if(newTab===undefined){
+      setTab('/');
+    } else {
+      setTab(newTab);
+    }
+    console.log(newTab);
   };
 
     return (
@@ -22,7 +27,7 @@ function NavBar(props) {
           <Grid container id='navBar'>
 
             <Grid item id='navItem'>
-              <Link to='/' onClick={null}>
+              <Link to='/' onClick={handleChange}>
                 <img id='navLogo' src='/images/soa-logo.png'/>
               </Link>
             </Grid>
@@ -30,9 +35,10 @@ function NavBar(props) {
             <Grid item id='navLinks'>
               <Toolbar>
                 <Tabs
-                indicatorColor='primary'
-                value={currentTab}
-                onChange={handleChange}>
+                  indicatorColor='primary'
+                  value={currentTab}
+                  onChange={handleChange}>
+                >
                   <Tab
                     label='Home'
                     component={Link}

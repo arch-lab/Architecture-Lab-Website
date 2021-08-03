@@ -11,7 +11,7 @@ function App() {
   const handle = Meteor.subscribe('users.services');
   return(
     <div>
-    <Paper>
+    <Paper elevation={3}>
       <NavBar/>
       <Routes/>
       <Footer/>
