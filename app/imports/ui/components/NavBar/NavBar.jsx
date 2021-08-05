@@ -1,79 +1,32 @@
 import React, { useState } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import { Link, RouterLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
 import LoginControl from '../LoginControl/LoginControl.jsx';
 import AdminLink from '../AdminLink/AdminLink.jsx';
 import styles from './NavBar.css';
 
-function NavBar(props) {
-
-  const [currentTab, setTab] = React.useState(window.location.pathname);
-
-  const handleChange = (event, newTab) => {
-    if(newTab===undefined){
-      setTab('/');
-    } else {
-      setTab(newTab);
-    }
-    console.log(newTab);
-  };
+function NavBar() {
 
     return (
-        <AppBar position='static' color="default">
-          <Grid container id='navBar'>
-
-            <Grid item id='navItem'>
-              <Link to='/' onClick={handleChange}>
-                <img id='navLogo' src='/images/soa-logo.png'/>
-              </Link>
-            </Grid>
-
-            <Grid item id='navLinks'>
-              <Toolbar>
-                <Tabs
-                  indicatorColor='primary'
-                  value={currentTab}
-                  onChange={handleChange}>
-                >
-                  <Tab
-                    label='Home'
-                    component={Link}
-                    to='/'
-                    value='/'
-                  />
-                  <Tab
-                    label='equipment-rental'
-                    component={Link}
-                    to='/equipment-rental'
-                    value='/equipment-rental'
-                  />
-                  <Tab
-                    label='classroom-reservation'
-                    component={Link}
-                    to='/classroom-reservation'
-                    value='/classroom-reservation'
-                  />
-                  <Tab
-                    label='software-request-forms'
-                    component={Link}
-                    to='/software-request-forms'
-                    value='/software-request-forms'
-                  />
-                  <AdminLink/>
-                </Tabs>
-              </Toolbar>
-            </Grid>
-
-            <Grid item id='navItem'>
-              <LoginControl/>
-            </Grid>
-
-          </Grid>
-        </AppBar>
+      <div>
+        <Navbar bg="light" variant="light">
+          <Container>
+            <Navbar.Brand as={Link} to='/Home'>
+              <img id='navLogo' src='/images/soa-logo.png'/>
+            </Navbar.Brand>
+            <Nav>
+            <Nav.Link as={ NavLink } to='/Home' activeClassName="selected">Home</Nav.Link>
+              <Nav.Link as={ NavLink } to='/equipment-rental' activeClassName="selected">Equipment Rental</Nav.Link>
+              <Nav.Link as={ NavLink } to='/classroom-reservation' activeClassName="selected">Classroom Reservation</Nav.Link>
+              <Nav.Link as={ NavLink } to='/software-request-forms' activeClassName="selected">Software Request Forms</Nav.Link>
+              <AdminLink/>
+            </Nav>
+            <LoginControl/>
+          </Container>
+        </Navbar>
+      </div>
     );
 
 } export default NavBar;

@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { useTracker } from 'meteor/react-meteor-data';
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from 'react-bootstrap/Button'
 
 function Home() {
 

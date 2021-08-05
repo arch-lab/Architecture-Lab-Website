@@ -20,3 +20,7 @@
 #navLinks {
   flex-grow: 1;
 }
+
+.selected {
+  border-bottom: #17a8cb 2px solid ;
+}

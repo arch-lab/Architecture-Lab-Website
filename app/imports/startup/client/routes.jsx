@@ -12,6 +12,9 @@ function Routes () {
   return(
     <div>
       <Switch>
+        <Route path="/Home">
+          <Home/>
+        </Route>
         <Route path="/equipment-rental">
           <EquipmentRental/>
         </Route>
@@ -23,9 +26,6 @@ function Routes () {
         </Route>
         <Route path="/admin">
           <Admin/>
-        </Route>
-        <Route exact path="/">
-          <Home/>
         </Route>
       </Switch>
     </div>
