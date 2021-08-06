@@ -16,7 +16,7 @@ function Home() {
   }
 
   function handleRoleClick() {
-    console.log(Meteor.roleAssignment.Meteor.user;
+    console.log(Meteor.roleAssignment.Meteor.user);
   }
 
 
