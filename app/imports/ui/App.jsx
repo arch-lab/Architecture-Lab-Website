@@ -6,7 +6,8 @@ import { Footer } from './components/Footer/Footer.jsx';
 
 
 function App() {
-  const handle = Meteor.subscribe('users.services');
+  //const handle = Meteor.subscribe('users.services');
+  //const rolesSub = Meteor.subscribe('')
   return(
     <div>
       <NavBar/>
