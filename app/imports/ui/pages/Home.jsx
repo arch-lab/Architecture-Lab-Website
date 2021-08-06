@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor'
 import { useTracker } from 'meteor/react-meteor-data';
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import { Roles } from 'meteor/alanning:roles';
 
 function Home() {
 
@@ -15,8 +16,7 @@ function Home() {
   }
 
   function handleRoleClick() {
-    console.log(Roles.userIsInRole(Meteor.userId(), ['admin']));
-
+    console.log(Meteor.roleAssignment.Meteor.user;
   }
 
 
