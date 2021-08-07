@@ -20,8 +20,8 @@ hot-module-replacement@0.3.0  # Update client in development without reloading t
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
 static-html                   # Define static page content in .html files
 react-meteor-data             # React higher-order component for reactively tracking Meteor data
-tracker
-accounts-base                 # Basic account infrastructure for Meteor
-accounts-google               # Meteor's package for google OAuth 2.0 validation
-service-configuration         # Required by accounts-google. Keeps OAuth keys hidden from the client
+tracker@1.2.0
+accounts-base@2.0.0                 # Basic account infrastructure for Meteor
+accounts-google@1.4.0               # Meteor's package for google OAuth 2.0 validation
+service-configuration@1.1.0         # Required by accounts-google. Keeps OAuth keys hidden from the client
 alanning:roles                # Allows for assigning role based permissions

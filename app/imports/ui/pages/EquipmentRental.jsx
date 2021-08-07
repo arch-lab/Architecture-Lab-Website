@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import EquipmentRentalForm from '../components/EquipmentRentalForm/EquipmentRentalForm.jsx';
 
 export const EquipmentRental = () => {
 
   return (
     <div>
-      <h1>I'm EquipmentRental</h1>
+      <EquipmentRentalForm/>
     </div>
   );
 };
