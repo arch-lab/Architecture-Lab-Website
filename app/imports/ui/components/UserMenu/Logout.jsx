@@ -15,7 +15,7 @@ function Logout() {
 
   return(
     <div>
-      <Button variant='contained' onClick={handleClick}>Logout</Button>
+      <Button onClick={handleClick}>Logout</Button>
     </div>
   );
 } export default Logout;
