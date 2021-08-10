@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay'
 import Popover from "react-bootstrap/Popover";
 import styles from './UserMenu.css';
+import Logout from './Logout.jsx';
 
 function UserMenu() {
 
@@ -34,10 +35,9 @@ function UserMenu() {
         placement="bottom-end">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <Popover {...props}>
-              <Popover.Header as="h3">Popover right</Popover.Header>
+              <Popover.Header as="h3">{user.services.google.given_name} {user.services.google.family_name}</Popover.Header>
               <Popover.Body>
-                And here's some <strong>amazing</strong> content. It's very engaging.
-                right?
+                <Logout/>
               </Popover.Body>
             </Popover>
           )}

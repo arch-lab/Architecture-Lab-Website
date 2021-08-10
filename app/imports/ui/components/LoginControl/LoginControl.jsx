@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoginButton from '../LoginButton/LoginButton.jsx';
-import Logout from '../Logout.jsx';
 import UserMenu from '../UserMenu/UserMenu.jsx';
 
 function LoginControl(props) {
@@ -11,7 +10,6 @@ function LoginControl(props) {
   if (user) {
     return (
       <>
-      <Logout/>
       <UserMenu/>
       </>
     );

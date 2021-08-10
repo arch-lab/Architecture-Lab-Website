@@ -35,10 +35,10 @@ function SoftwareRequestForm() {
     return(
       <>
         <Container>
-          <Form onSubmit={handleSubmit}>
+          <Form className='form' onSubmit={handleSubmit}>
 
-            <Row className="g-2">
-              <Col md>
+            <Row>
+              <Col>
                 <Form.Group>
                   <FloatingLabel label='First Name'>
                     <Form.Control
@@ -51,7 +51,7 @@ function SoftwareRequestForm() {
                 </Form.Group>
               </Col>
 
-              <Col md>
+              <Col>
                 <Form.Group>
                   <FloatingLabel label='Last Name'>
                     <Form.Control
@@ -64,7 +64,7 @@ function SoftwareRequestForm() {
                 </Form.Group>
               </Col>
 
-              <Col md>
+              <Col>
                 <Form.Group>
                   <FloatingLabel label='Email address'>
                     <Form.Control

@@ -6,3 +6,7 @@
   cursor: pointer;
   box-shadow: 0px 0px 10px rgb(0 0 0 / 40%);
 }
+
+.popover-arrow {
+  display: none !important;
+}
