@@ -20,7 +20,7 @@ function NavBar() {
             <Nav.Link as={ NavLink } to='/Home' activeClassName="selected">Home</Nav.Link>
               <Nav.Link as={ NavLink } to='/equipment-rental' activeClassName="selected">Equipment Rental</Nav.Link>
               <Nav.Link as={ NavLink } to='/classroom-reservation' activeClassName="selected">Classroom Reservation</Nav.Link>
-              <Nav.Link as={ NavLink } to='/software-request-forms' activeClassName="selected">Software Request Forms</Nav.Link>
+              <Nav.Link as={ NavLink } to='/software-requests' activeClassName="selected">Software Requests</Nav.Link>
               <AdminLink/>
             </Nav>
             <LoginControl/>

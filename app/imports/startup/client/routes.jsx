@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../../ui/pages/Home.jsx';
 import { EquipmentRental } from '../../ui/pages/EquipmentRental.jsx';
 import { ClassroomReservation } from '../../ui/pages/ClassroomReservation.jsx';
-import { SoftwareRequestForms } from '../../ui/pages/SoftwareRequestForms.jsx';
+import { SoftwareRequests } from '../../ui/pages/SoftwareRequests.jsx';
 import Admin from '../../ui/pages/Admin.jsx';
 
 function Routes () {
@@ -21,8 +21,8 @@ function Routes () {
         <Route path="/classroom-reservation">
           <ClassroomReservation/>
         </Route>
-        <Route path="/software-request-forms">
-          <SoftwareRequestForms/>
+        <Route path="/software-requests">
+          <SoftwareRequests/>
         </Route>
         <Route path="/admin">
           <Admin/>

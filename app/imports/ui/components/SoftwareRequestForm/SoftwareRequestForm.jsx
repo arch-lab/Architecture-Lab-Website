@@ -8,9 +8,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 
-function EquipmentRentalForm() {
+function SoftwareRequestForm() {
 
   const user = useTracker(() => Meteor.user(), []);
+  const softwareOptions = ['ArchGIS', 'Adobe'];
 
   const [email, setEmail] = useState('');
   const [givenName, setGivenName] = useState('');
@@ -19,8 +20,6 @@ function EquipmentRentalForm() {
   const [location, setLocation] = useState('');
   const [studentName, setStudentName] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
-
-  const equipmentOptions = ["TV", "Laptop", "Mouse", "Keyboard"];
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -79,14 +78,14 @@ function EquipmentRentalForm() {
               </Col>
             </Row>
 
-            <FloatingLabel label='Equipment'>
+            <FloatingLabel label='Software'>
               <Form.Control
                 as='select'
-                placeholder='Equipment'
+                placeholder='Software'
                 onChange={event => setEquipment(event.target.value)}
               >
-                <option>Select Equipment</option>
-                {equipmentOptions.map((opt, i) => (
+                <option>Select Software</option>
+                {softwareOptions.map((opt, i) => (
                   <option key={opt} value={opt}>{opt}</option>
                 ))}
               </Form.Control>
@@ -136,4 +135,4 @@ function EquipmentRentalForm() {
       <Spinner animation="border" role="status"/>
     );
   }
-} export default EquipmentRentalForm;
+} export default SoftwareRequestForm;
