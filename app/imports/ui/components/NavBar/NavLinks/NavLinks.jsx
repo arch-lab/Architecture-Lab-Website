@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav'
 import { NavLink } from "react-router-dom";
-import AdminLink from '../../AdminLink/AdminLink.jsx';
+import { AdminLink } from '../../AdminLink/AdminLink.jsx';
 
 export const NavLinks = (props) => {
 

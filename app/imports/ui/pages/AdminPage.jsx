@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Admin = (props) => {
+export const AdminPage = (props) => {
 
   const user = props.user;
 

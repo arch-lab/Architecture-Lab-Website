@@ -1,11 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import { Home } from '../../ui/pages/Home.jsx';
-import { EquipmentRental } from '../../ui/pages/EquipmentRental.jsx';
-import { ClassroomReservation } from '../../ui/pages/ClassroomReservation.jsx';
-import { SoftwareRequests } from '../../ui/pages/SoftwareRequests.jsx';
-import { Admin } from '../../ui/pages/Admin.jsx';
+import { HomePage } from '../../ui/pages/HomePage.jsx';
+import { EquipmentRentalPage } from '../../ui/pages/EquipmentRentalPage.jsx';
+import { ClassroomReservationPage } from '../../ui/pages/ClassroomReservationPage.jsx';
+import { SoftwareRequestsPage } from '../../ui/pages/SoftwareRequestsPage.jsx';
+import { AdminPage } from '../../ui/pages/AdminPage.jsx';
+
+/** Route definitions that tell React what component to render at a given URL */
 
 export const Routes = (props) => {
 
@@ -14,20 +16,23 @@ export const Routes = (props) => {
   return(
     <>
       <Switch>
-        <Route path="/Home">
-          <Home user={user}/>
+        <Route exact path="/Home">
+          <HomePage user={user}/>
         </Route>
-        <Route path="/equipment-rental">
-          <EquipmentRental user={user}/>
+        <Route exact path="/equipment-rental">
+          <EquipmentRentalPage user={user}/>
         </Route>
-        <Route path="/classroom-reservation">
-          <ClassroomReservation user={user}/>
+        <Route exact path="/classroom-reservation">
+          <ClassroomReservationPage user={user}/>
         </Route>
-        <Route path="/software-requests">
-          <SoftwareRequests user={user}/>
+        <Route exact path="/software-requests">
+          <SoftwareRequestsPage user={user}/>
         </Route>
-        <Route path="/admin">
-          <Admin user={user}/>
+        <Route exact path="/user/:userId">
+          <AdminPage user={user}/>
+        </Route>
+        <Route exact path="/admin">
+          <AdminPage user={user}/>
         </Route>
       </Switch>
     </>

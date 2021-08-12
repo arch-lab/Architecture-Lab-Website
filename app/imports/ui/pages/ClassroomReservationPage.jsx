@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const ClassroomReservation = (props) => {
+export const ClassroomReservationPage = (props) => {
 
   const user = props.user;
   const test = props.test;

@@ -7,6 +7,7 @@ import Overlay from 'react-bootstrap/Overlay'
 import Popover from "react-bootstrap/Popover";
 import styles from './UserMenu.css';
 import { Logout } from './Logout.jsx';
+import { UserLink } from '../UserLink/UserLink.jsx';
 
 /*
 * Takes a Meteor User Object that has google added as a service.
@@ -14,7 +15,6 @@ import { Logout } from './Logout.jsx';
 * Renders a circular button of the users google profile picture. When clicked a
 * popover menu is displayed.
 */
-
 export const UserMenu = (props) => {
 
   const user = props.user;
@@ -54,6 +54,7 @@ export const UserMenu = (props) => {
             <Popover {...props}>
               <Popover.Header as="h3">{user.services.google.given_name} {user.services.google.family_name}</Popover.Header>
               <Popover.Body>
+                <UserLink user={user}/>
                 <Logout/>
               </Popover.Body>
             </Popover>

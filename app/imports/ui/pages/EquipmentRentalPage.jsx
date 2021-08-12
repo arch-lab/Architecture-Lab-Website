@@ -1,7 +1,7 @@
 import React from 'react';
 import { EquipmentRentalForm } from '../components/EquipmentRentalForm/EquipmentRentalForm.jsx';
 
-export const EquipmentRental = (props) => {
+export const EquipmentRentalPage = (props) => {
 
   const user = props.user;
 

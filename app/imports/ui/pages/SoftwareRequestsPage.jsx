@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SoftwareRequestForm } from '../components/SoftwareRequestForm/SoftwareRequestForm.jsx'
 
-export const SoftwareRequests = (props) => {
+export const SoftwareRequestsPage = (props) => {
 
   const user = props.user;
 
