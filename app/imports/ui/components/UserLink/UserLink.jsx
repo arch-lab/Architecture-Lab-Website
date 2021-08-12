@@ -1,15 +1,15 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const AdminLink = (props) => {
+export const UserLink = (props) => {
 
   const user = props.user;
 
   if(Roles.userIsInRole(user, ['admin'])){
     return(
       <>
-        <Nav.Link as={ NavLink } to="/admin" activeClassName="selected">Admin</Nav.Link>
+        <Link to="/user">My Profile</Link>
       </>
     );
   } else {

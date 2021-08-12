@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Roles } from 'meteor/alanning:roles';
 
- export const Home = (props) => {
+ export const HomePage = (props) => {
 
   const user = props.user;
 
