@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTracker } from 'meteor/react-meteor-data';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
@@ -8,30 +7,33 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 
-function SoftwareRequestForm() {
+export const SoftwareRequestForm = (props) => {
 
-  const user = useTracker(() => Meteor.user(), []);
-  const softwareOptions = ['ArchGIS', 'Adobe'];
+  const user = props.user;
 
-  const [email, setEmail] = useState('');
-  const [givenName, setGivenName] = useState('');
-  const [familyName, setFamilyName] = useState('');
-  const [equipment, setEquipment] = useState('');
-  const [location, setLocation] = useState('');
-  const [studentName, setStudentName] = useState('');
-  const [additionalInfo, setAdditionalInfo] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`given name: ${givenName}`);
-    console.log(`family name: ${familyName}`);
-    console.log(`email: ${email}`);
-    console.log(`equipment: ${equipment}`);
-    console.log(`location: ${location}`);
-    console.log(`student name: ${studentName}`);
-    console.log(`additionalInfo: ${additionalInfo}`)
-  }
   if(user){
+
+    const softwareOptions = ['ArchGIS', 'Adobe'];
+
+    const [email, setEmail] = useState(user.services.google.email);
+    const [givenName, setGivenName] = useState(user.services.google.given_name);
+    const [familyName, setFamilyName] = useState(user.services.google.family_name);
+    const [software, setSoftware] = useState('');
+    const [location, setLocation] = useState('');
+    const [studentName, setStudentName] = useState('');
+    const [additionalInfo, setAdditionalInfo] = useState('');
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(`given name: ${givenName}`);
+      console.log(`family name: ${familyName}`);
+      console.log(`email: ${email}`);
+      console.log(`software: ${software}`);
+      console.log(`location: ${location}`);
+      console.log(`student name: ${studentName}`);
+      console.log(`additionalInfo: ${additionalInfo}`)
+    }
+
     return(
       <>
         <Container>
@@ -45,7 +47,7 @@ function SoftwareRequestForm() {
                       type='text'
                       placeholder='First Name'
                       value={givenName}
-                      onChange={event => setGivenName(event.target.value)}
+                      readOnly
                     />
                   </FloatingLabel>
                 </Form.Group>
@@ -58,7 +60,7 @@ function SoftwareRequestForm() {
                       type='text'
                       placeholder='Last Name'
                       value={familyName}
-                      onChange={event => setFamilyName(event.target.value)}
+                      readOnly
                     />
                   </FloatingLabel>
                 </Form.Group>
@@ -71,7 +73,7 @@ function SoftwareRequestForm() {
                       type='email'
                       placeholder='Email address'
                       value={email}
-                      onChange={event => setEmail(event.target.value)}
+                      readOnly
                     />
                   </FloatingLabel>
                 </Form.Group>
@@ -82,7 +84,7 @@ function SoftwareRequestForm() {
               <Form.Control
                 as='select'
                 placeholder='Software'
-                onChange={event => setEquipment(event.target.value)}
+                onChange={event => setSoftware(event.target.value)}
               >
                 <option>Select Software</option>
                 {softwareOptions.map((opt, i) => (
@@ -135,4 +137,4 @@ function SoftwareRequestForm() {
       <Spinner animation="border" role="status"/>
     );
   }
-} export default SoftwareRequestForm;
+};

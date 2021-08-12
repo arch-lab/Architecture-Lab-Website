@@ -1,14 +1,11 @@
 import { Meteor } from 'meteor/meteor'
-import { useTracker } from 'meteor/react-meteor-data';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Roles } from 'meteor/alanning:roles';
 
-function Home() {
+ export const Home = (props) => {
 
-  const user = useTracker(() => Meteor.user());
-
-
+  const user = props.user;
 
   function handleClick() {
     console.log(Meteor.userId());
@@ -18,7 +15,6 @@ function Home() {
   function handleRoleClick() {
     console.log(Roles.userIsInRole(Meteor.user(), 'admin'));
   }
-
 
   if(user){
     return (
@@ -37,4 +33,4 @@ function Home() {
       </div>
     );
   }
-}export default Home;
+};

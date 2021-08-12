@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { useTracker } from 'meteor/react-meteor-data';
+import React from 'react';
 import Nav from 'react-bootstrap/Nav'
 import { NavLink } from "react-router-dom";
 
-  function AdminLink(){
+  function AdminLink(props){
 
-    const user = useTracker(() => Meteor.user(), []);
+    const user = props.user;
 
     if(Roles.userIsInRole(user, ['admin'])){
       return(

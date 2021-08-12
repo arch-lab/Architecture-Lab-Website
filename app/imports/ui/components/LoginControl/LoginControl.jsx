@@ -1,16 +1,16 @@
 import React from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
-import LoginButton from '../LoginButton/LoginButton.jsx';
-import UserMenu from '../UserMenu/UserMenu.jsx';
+import { LoginButton } from '../LoginButton/LoginButton.jsx';
+import { UserMenu } from '../UserMenu/UserMenu.jsx';
 
-function LoginControl(props) {
+export const LoginControl = (props) => {
 
-  const user = useTracker(() => Meteor.user(), []);
+  const user = props.user;
 
   if (user) {
     return (
       <>
-      <UserMenu/>
+      <UserMenu user={user}/>
       </>
     );
   } else {
@@ -18,4 +18,4 @@ function LoginControl(props) {
       <LoginButton/>
     );
   }
-} export default LoginControl;
+};

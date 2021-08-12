@@ -6,21 +6,37 @@ import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay'
 import Popover from "react-bootstrap/Popover";
 import styles from './UserMenu.css';
-import Logout from './Logout.jsx';
+import { Logout } from './Logout.jsx';
 
-function UserMenu() {
+/*
+* Takes a Meteor User Object that has google added as a service.
+*
+* Renders a circular button of the users google profile picture. When clicked a
+* popover menu is displayed.
+*/
 
-  const user = useTracker(() => Meteor.user(), []);
+export const UserMenu = (props) => {
+
+  const user = props.user;
   const [show, setShow] = useState(false);
   const target = useRef(null);
 
-  function handleClick() {
-    console.log('I was clicked');
+/* Toggles the visibility of the popover menu when the button is clicked */
+  const handleClick = () => {
     setShow(!show);
   }
 
-  return (
-    <>
+/* Hides popover when user clicks outside of it.
+* Since this will run whenever the popover hides it needs to forcefuly
+* set show to false or it breaks the users ability to toggle off via the button.
+*/
+  const handleHide = () => {
+    setShow(false);
+  }
+
+  if(user){
+    return (
+      <>
         <Image
           id='profileButton'
           src={user.services.google.picture}
@@ -31,7 +47,8 @@ function UserMenu() {
         <Overlay
         target={target.current}
         show={show}
-        hideArrow={true}
+        rootClose={true}
+        onHide={handleHide}
         placement="bottom-end">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <Popover {...props}>
@@ -42,20 +59,9 @@ function UserMenu() {
             </Popover>
           )}
         </Overlay>
-    </>
-  );
-} export default UserMenu
-/*
-<div
-  {...props}
-  style={{
-    backgroundColor: 'rgba(255, 100, 100, 0.85)',
-    padding: '2px 10px',
-    color: 'white',
-    borderRadius: 3,
-    ...props.style,
-  }}
->
-  Simple tooltip
-</div>
-*/
+      </>
+    );
+  } else {
+    return(null);
+  }
+};

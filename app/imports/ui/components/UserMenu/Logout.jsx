@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button'
 
-function Logout() {
+export const Logout = () => {
 
   function handleClick() {
     Meteor.logout((err) => {
@@ -18,4 +18,4 @@ function Logout() {
       <Button onClick={handleClick}>Logout</Button>
     </div>
   );
-} export default Logout;
+};

@@ -1,17 +1,18 @@
 import React, {render} from 'react';
-
-import NavBar from './components/NavBar/NavBar.jsx';
-import Routes from '../startup/client/routes.jsx';
+import { useTracker } from 'meteor/react-meteor-data';
+import { NavBar } from './components/NavBar/NavBar.jsx';
+import { Routes } from '../startup/client/routes.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
 
 
 function App() {
-  //const handle = Meteor.subscribe('users.services');
-  //const rolesSub = Meteor.subscribe('')
+
+  const user = useTracker(() => Meteor.user(), []);
+
   return(
     <div>
-      <NavBar/>
-      <Routes/>
+      <NavBar user={user}/>
+      <Routes user={user}/>
       <Footer/>
     </div>
   );
