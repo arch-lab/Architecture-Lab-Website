@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTracker } from 'meteor/react-meteor-data';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
@@ -8,31 +7,33 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 
-function EquipmentRentalForm() {
+export const EquipmentRentalForm = (props) => {
 
-  const user = useTracker(() => Meteor.user(), []);
+  const user = props.user;
 
-  const [email, setEmail] = useState('');
-  const [givenName, setGivenName] = useState('');
-  const [familyName, setFamilyName] = useState('');
-  const [equipment, setEquipment] = useState('');
-  const [location, setLocation] = useState('');
-  const [studentName, setStudentName] = useState('');
-  const [additionalInfo, setAdditionalInfo] = useState('');
-
-  const equipmentOptions = ["TV", "Laptop", "Mouse", "Keyboard"];
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`given name: ${givenName}`);
-    console.log(`family name: ${familyName}`);
-    console.log(`email: ${email}`);
-    console.log(`equipment: ${equipment}`);
-    console.log(`location: ${location}`);
-    console.log(`student name: ${studentName}`);
-    console.log(`additionalInfo: ${additionalInfo}`)
-  }
   if(user){
+
+    const equipmentOptions = ["TV", "Laptop", "Mouse", "Keyboard"];
+
+    const [email, setEmail] = useState(user.services.google.email);
+    const [givenName, setGivenName] = useState(user.services.google.given_name);
+    const [familyName, setFamilyName] = useState(user.services.google.family_name);
+    const [equipment, setEquipment] = useState('');
+    const [location, setLocation] = useState('');
+    const [studentName, setStudentName] = useState('');
+    const [additionalInfo, setAdditionalInfo] = useState('');
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(`given name: ${givenName}`);
+      console.log(`family name: ${familyName}`);
+      console.log(`email: ${email}`);
+      console.log(`equipment: ${equipment}`);
+      console.log(`location: ${location}`);
+      console.log(`student name: ${studentName}`);
+      console.log(`additionalInfo: ${additionalInfo}`)
+    }
+
     return(
       <>
         <Container>
@@ -46,7 +47,7 @@ function EquipmentRentalForm() {
                       type='text'
                       placeholder='First Name'
                       value={givenName}
-                      onChange={event => setGivenName(event.target.value)}
+                      readOnly
                     />
                   </FloatingLabel>
                 </Form.Group>
@@ -59,7 +60,7 @@ function EquipmentRentalForm() {
                       type='text'
                       placeholder='Last Name'
                       value={familyName}
-                      onChange={event => setFamilyName(event.target.value)}
+                      readOnly
                     />
                   </FloatingLabel>
                 </Form.Group>
@@ -72,7 +73,7 @@ function EquipmentRentalForm() {
                       type='email'
                       placeholder='Email address'
                       value={email}
-                      onChange={event => setEmail(event.target.value)}
+                      readOnly
                     />
                   </FloatingLabel>
                 </Form.Group>
@@ -136,4 +137,4 @@ function EquipmentRentalForm() {
       <Spinner animation="border" role="status"/>
     );
   }
-} export default EquipmentRentalForm;
+};

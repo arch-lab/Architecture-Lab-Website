@@ -1,32 +1,26 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from "react-router-dom";
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import LoginControl from '../LoginControl/LoginControl.jsx';
-import AdminLink from '../AdminLink/AdminLink.jsx';
+import { Link } from "react-router-dom";
+import { NavLinks } from './NavLinks/NavLinks.jsx'
+import { LoginControl } from '../LoginControl/LoginControl.jsx';
 import styles from './NavBar.css';
 
-function NavBar() {
+export const NavBar = (props) => {
 
-    return (
-      <div>
-        <Navbar bg="light" variant="light">
-          <Container>
-            <Navbar.Brand as={Link} to='/Home'>
-              <img id='navLogo' src='/images/soa-logo.png'/>
-            </Navbar.Brand>
-            <Nav>
-            <Nav.Link as={ NavLink } to='/Home' activeClassName="selected">Home</Nav.Link>
-              <Nav.Link as={ NavLink } to='/equipment-rental' activeClassName="selected">Equipment Rental</Nav.Link>
-              <Nav.Link as={ NavLink } to='/classroom-reservation' activeClassName="selected">Classroom Reservation</Nav.Link>
-              <Nav.Link as={ NavLink } to='/software-requests' activeClassName="selected">Software Requests</Nav.Link>
-              <AdminLink/>
-            </Nav>
-            <LoginControl/>
-          </Container>
-        </Navbar>
-      </div>
-    );
+  const user = props.user;
 
-} export default NavBar;
+  return (
+    <>
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand as={Link} to='/Home'>
+            <img id='navLogo' src='/images/soa-logo.png'/>
+          </Navbar.Brand>
+          <NavLinks user={user}/>
+          <LoginControl user={user}/>
+        </Container>
+      </Navbar>
+    </>
+  );
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button'
 import styles from './LoginButton.css';
 
-function LoginButton() {
+export const LoginButton = () => {
 
   function handleClick() {
     Meteor.loginWithGoogle({
@@ -28,4 +28,4 @@ function LoginButton() {
       </Button>
     </div>
   );
-} export default LoginButton;
+};
