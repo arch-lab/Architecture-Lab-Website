@@ -3,8 +3,8 @@ ServiceConfiguration.configurations.upsert(
   {
     $set: {
       loginStyle: "popup",
-      clientId: Meteor.settings.google.clientId,
-      secret: Meteor.settings.google.secret
+      clientId: Meteor.settings.private.oAuth.google.clientId,
+      secret: Meteor.settings.private.oAuth.google.secret
     }
   }
 );
