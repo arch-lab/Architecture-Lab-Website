@@ -5,7 +5,6 @@ import { HomePage } from '../../ui/pages/HomePage.jsx';
 import { EquipmentRentalPage } from '../../ui/pages/EquipmentRentalPage.jsx';
 import { ClassroomReservationPage } from '../../ui/pages/ClassroomReservationPage.jsx';
 import { SoftwareRequestsPage } from '../../ui/pages/SoftwareRequestsPage.jsx';
-import { UserPage } from '../../ui/pages/UserPage.jsx';
 import { AdminPage } from '../../ui/pages/AdminPage.jsx';
 
 /** Route definitions that tell React what component to render at a given URL */
@@ -28,9 +27,6 @@ export const Routes = (props) => {
         </Route>
         <Route exact path="/software-requests">
           <SoftwareRequestsPage user={user}/>
-        </Route>
-        <Route exact path="/user/:userId">
-          <UserPage user={user}/>
         </Route>
         <Route exact path="/admin">
           <AdminPage user={user}/>

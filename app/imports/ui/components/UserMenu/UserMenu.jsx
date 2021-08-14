@@ -7,7 +7,6 @@ import Overlay from 'react-bootstrap/Overlay'
 import Popover from "react-bootstrap/Popover";
 import styles from './UserMenu.css';
 import { Logout } from './Logout.jsx';
-import { UserLink } from '../UserLink/UserLink.jsx';
 
 /*
 * Takes a Meteor User Object that has google added as a service.
@@ -54,7 +53,6 @@ export const UserMenu = (props) => {
             <Popover {...props}>
               <Popover.Header as="h3">{user.services.google.given_name} {user.services.google.family_name}</Popover.Header>
               <Popover.Body>
-                <UserLink user={user}/>
                 <Logout/>
               </Popover.Body>
             </Popover>
