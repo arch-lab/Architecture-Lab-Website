@@ -8,6 +8,8 @@ import { Footer } from './components/Footer/Footer.jsx';
 function App() {
 
   const user = useTracker(() => Meteor.user(), []);
+  const events = Meteor.subscribe('events');
+
 
   return(
     <div>

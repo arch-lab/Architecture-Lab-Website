@@ -1,5 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+
 Meteor.publish(null, function () {
-  if (! this.userId) {
+  if (!this.userId) {
     return null;
   }
 
