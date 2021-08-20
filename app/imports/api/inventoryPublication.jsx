@@ -1,12 +1,12 @@
 import { Meteor } from 'meteor/meteor';
-import { InventoryCollection } from '/imports/db/InventoryCollection';
+import { Inventory } from '/imports/db/Inventory';
 
-Meteor.publish(null, function () {
+Meteor.publish('inventory', function () {
   if (!this.userId) {
     return null;
   }
 
-  return InventoryCollection.find({}, {
+  return Inventory.find({}, {
     fields: {
       "ink": 1,
       "paper": 1,
