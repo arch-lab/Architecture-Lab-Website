@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
@@ -8,11 +8,24 @@ export const Calendar = (props) => {
 
   const title = props.title;
 
+  const [date, setDate] = useState(new Date());
 
+  useEffect(() => {
+    var timerID = setInterval( () => tick(), 1000 );
+    
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  });
+
+  function tick() {
+    setDate(new Date());
+  }
 
   return(
     <Container>
       <h1>{title}</h1>
+      <h1>{date.toLocaleTimeString()}</h1>
       <Row className='row'>
         <Col className='col'>
           Monday
