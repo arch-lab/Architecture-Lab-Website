@@ -7,25 +7,12 @@ import styles from './Calendar.css'
 export const Calendar = (props) => {
 
   const title = props.title;
-
-  const [date, setDate] = useState(new Date());
-
-  useEffect(() => {
-    var timerID = setInterval( () => tick(), 1000 );
-    
-    return function cleanup() {
-      clearInterval(timerID);
-    };
-  });
-
-  function tick() {
-    setDate(new Date());
-  }
+  const date = props.date;
 
   return(
     <Container>
       <h1>{title}</h1>
-      <h1>{date.toLocaleTimeString()}</h1>
+      <h1>{date.toLocaleString()}</h1>
       <Row className='row'>
         <Col className='col'>
           Monday

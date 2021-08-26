@@ -25,3 +25,4 @@ accounts-base@2.0.1                 # Basic account infrastructure for Meteor
 accounts-google@1.4.0               # Meteor's package for google OAuth 2.0 validation
 service-configuration@1.1.0         # Required by accounts-google. Keeps OAuth keys hidden from the client
 alanning:roles                # Allows for assigning role based permissions
+mdg:validated-method

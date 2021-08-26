@@ -3,7 +3,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { NavBar } from './components/NavBar/NavBar.jsx';
 import { Routes } from '../startup/client/routes.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
-import { Events } from '../db/Events.jsx';
+import { Calendars } from '../db/Calendars.jsx';
 import { Inventory } from '../db/Inventory.jsx';
 
 
@@ -18,9 +18,9 @@ function App() {
     if (! Meteor.user()) {
       return null;
     }
-    const handler = Meteor.subscribe('events');
+    const handler = Meteor.subscribe('calendars');
 
-    return Events.find().fetch();
+    return Calendars.find().fetch();
   });
 
   const inventory = useTracker(() => {

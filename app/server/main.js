@@ -1,12 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Inventory } from '/imports/db/Inventory';
-import { Events } from '/imports/db/Events';
+import { Calendars } from '/imports/db/Calendars';
 import ServiceConfiguration from '/server/service-configuration.js';
 import '/server/userPublication.jsx';
 import '/server/rolesPublication.jsx';
 import '/imports/api/inventoryPublication.jsx';
-import '/imports/api/eventsPublication.jsx';
+import '/imports/api/calendars/calendarsPublication.jsx';
+import '/imports/api/calendars/calendarsMethods.jsx';
 
 Meteor.startup(() => {
 
@@ -23,8 +24,8 @@ Meteor.startup(() => {
     );
   }
 
-  if (Events.find().count() === 0) {
-    Events.insert(
+  if (Calendars.find().count() === 0) {
+    Calendars.insert(
       {
         "event": {
           "title": "Test Event",
