@@ -1,5 +1,6 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import SimpleSchema from 'simpl-schema';
+import { Calendars } from '/imports/db/Calendars';
 
 export const addCalendar = new ValidatedMethod({
 
@@ -9,7 +10,7 @@ export const addCalendar = new ValidatedMethod({
   }).validator(),
   run({ title }) {
 
-    if(Roles.userIsInRole(user, ['admin'])) {
+    if(Roles.userIsInRole(Meteor.user(), ['admin'])) {
       Calendars.insert(
         {
           "title": {title}
